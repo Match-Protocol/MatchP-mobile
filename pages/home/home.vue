@@ -92,6 +92,7 @@
       <view class="topTempFixed" :class="temp?'topTempFixedShow':''"></view>
 
       <!-- 活动列表 -->
+      <view @tap="goDetails">活动item</view>
     </view>
 
     <tabbarCustom :cur-index="0"></tabbarCustom>
@@ -545,7 +546,12 @@ export default {
     },
     goLogin() {
       uni.navigateTo({
-        url: "/pagesView/login/login",
+        url: "/pages/login/login",
+      });
+    },
+    goDetails() {
+      uni.navigateTo({
+        url: "/pages/details/details",
       });
     }
   }
