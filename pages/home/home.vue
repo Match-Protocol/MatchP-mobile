@@ -92,7 +92,19 @@
       <view class="topTempFixed" :class="temp?'topTempFixedShow':''"></view>
 
       <!-- 活动列表 -->
-      <view @tap="goDetails">活动item</view>
+      <block v-if="activityLists.length == 0">
+        <view class="tl-section-2">
+          <view class="tl-img-nodata">
+            <text class="tl-font-nodata">暂无活动</text>
+          </view>
+        </view>
+      </block>
+      <view v-else class="activity-List">
+        <block v-for="(item,index) in activityLists" :key="item.id">
+          <activityListBox :activityItem="item" :isPriceShow="true" :is-show-km="true"
+                           @goDetails="goDetails"></activityListBox>
+        </block>
+      </view>
     </view>
 
     <tabbarCustom :cur-index="0"></tabbarCustom>
@@ -104,12 +116,14 @@ import bannerBox from "../../components/home/banner-box.vue"
 import activityBox from "../../components/home/activity-box.vue"
 import homeCalendar from "../../components/home/home-calendar.vue";
 import tabbarCustom from "../../components/index/tabbar-custom.vue";
+import activityListBox from "../../components/home/activity-list-box.vue"
 export default {
   components: {
     tabbarCustom,
     bannerBox,
     activityBox,
-    homeCalendar
+    homeCalendar,
+    activityListBox
   },
   data() {
     return {
@@ -152,7 +166,37 @@ export default {
       pageSize: 10,
       // 是否还有更多数据
       noMoreData: false,
-      activityLists: [], //活动列表
+      activityLists: [
+        {
+          act_type: 6,
+          addr_coordinate_original: "106.55753 29.570103",
+          address: "潜能新天地",
+          apply_price: 0,
+          apply_seed: 0,
+          apply_users_tota: 4,
+          attendance: 100,
+          charge_type: 0,
+          distance: "284.5",
+          end_time: "17:00",
+          hea_Icons: [
+           "https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/head/head03.jpg",
+            "https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/head/head01.jpg",
+            "https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/head/head03.jpg",
+           "https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/head/head02.jpg",
+          ],
+          id: 88,
+          label: 4,
+          name: "漫谈dex：去中心化衍生品交易所新叙事",
+          setting: 176,
+          start_time: "04.11 15:00",
+          status: 4,
+          statusName: "报名中",
+          thumb: "https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1743674423563722261153646551.jpg",
+          tri_avatar: "https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1743334295455001325351077815.jpg",
+          tribe_id: 0,
+          tribe_name: "Variety Labs"
+        }
+      ], //活动列表
       latitude: "", // 纬度
       longitude: "", // 经度
       classify_id: 0, // 分类
@@ -301,15 +345,13 @@ export default {
   onLoad() {
     this.$nextTick(() => {
       this.getMyScroll();
-      this.refreshResult(true);
+      // this.refreshResult(true);
     });
 
   },
   onShow() {
   },
   onUnload() {
-    console.log("onUnload")
-    this.activityLists = [];
   },
   mounted() {
     console.log("刷新会执行")

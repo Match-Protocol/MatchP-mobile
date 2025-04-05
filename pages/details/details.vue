@@ -58,7 +58,7 @@
         <view class="tl-flex-row-start">
           <image class="tl-icon-32"
                  src="https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/common/time_n.png"></image>
-          <span class="tl-font-28-66">活动时间:{{ startTime }}-{{ endTime }}</span>
+          <span class="tl-font-28-66">活动时间:04.11 14:00-18:00</span>
         </view>
         <view class="tl-flex-row-bwt">
           <view class="tl-address">
@@ -117,7 +117,7 @@
       </view>
       <!-- 活动介绍 -->
       <view class="content-introduce">
-        <view class="introduce-title">活动描述</view>
+        <view class="introduce-title" style="margin: 0 0 30rpx 0">活动描述</view>
         <rich-text :nodes="richObj"></rich-text>
       </view>
       <!--详情页图片视频-->
@@ -239,55 +239,47 @@ export default {
       isLogin: false, // 是否已登录 默认未登录
       activity_id: "",
       bannerList: [
-        {poster:'',type:"image",url:"https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1736646863418288138686010200.jpg"},
-        {poster:'',type:"image",url:"https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1736646886346630566554658303.jpg"},
-        {poster:'',type:"image",url:"https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1736647153102071260771273587.jpg"},
-        {poster:'',type:"image",url:"https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1736647178419115488324216276.jpg"}
+        {poster:'',type:"image",url:"https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1743674423563722261153646551.jpg"},
       ],
       tribeInfo: {
-        tribe_id:89,
-        tribe_name:"拾菌小组",
-        tri_avatar:"https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1736313556322113523270834174.jpg",
+        tribe_id:163,
+        tribe_name:"Variety Labs",
+        tri_avatar:"https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1743334295455001325351077815.jpg",
         label:4,
       },// 社区详情
       activityInfo: {
-        act_type: 9,
-        activity_introduction: "<p>所有免费8.8元</p>",
-        addr_coordinate_original: "103.98657 30.67735",
-        address: "清波社区党群服务中心",
+        act_type: 6,
+        activity_introduction: "",
+        addr_coordinate_original: "106.55753 29.570103",
+        address: "潜能新天地",
         address_type: 2,
-        attendance: 145,
-        audit_status: 7,
-        charge_type: 1,
+        attendance: 100,
+        audit_status: 4,
+        charge_type: 0,
         collect_total: 0,
         distance: 0,
-        end_time: 1736686800,
-        id: 46,
+        end_time: 1744362000,
+        id: 88,
         is_apply: false,
         is_collect: false,
         is_hide: false,
         is_promotion: false,
         is_push: 0,
-        issuer_avatar: "https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/head/head03.jpg",
+        issuer_avatar: "https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1743395768327881612810102006.jpg",
         issuer_gender: 1,
-        issuer_id: 12,
-        issuer_label: "中二少年一枚",
-        issuer_name: "白醋",
-        issuer_phone: "18708130825",
+        issuer_id: 342,
+        issuer_label: "有喜欢交易的朋友欢迎沟通。",
+        issuer_name: "leo",
+        issuer_phone: "15281378332",
         label: 4,
-        picture_url: [],
+        picture_url: '',
         promotion_ratio: 0,
-        refund_model_id: 4,
+        refund_model_id: 0,
         registration_population: 0,
         role: 0,
-        start_time: 1736650800,
-        status: 7,
-        theme: "手工针织",
-        ticker_type:[],
-        tri_avatar: "https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1736313556322113523270834174.jpg",
-        tribe_id: 89,
-        tribe_name: "拾菌小组",
-        user_avatars: "[]"
+        start_time: 1744354800,
+        status: 4,
+        theme: "漫谈dex：去中心化衍生品交易所新叙事",
       },
       startTime: "",
       endTime: "",
@@ -295,10 +287,10 @@ export default {
       setting: 0,//边距设置
       fullLoading: true, //展示加载动画
       ownerInfo: {
-        name:"白醋",
-        avatar:"https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/head/head03.jpg",
+        name:"leo",
+        avatar:"https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1743395768327881612810102006.jpg",
         phone:'17599994800',
-        label:'中二少年一枚',
+        label:"有喜欢交易的朋友欢迎沟通。",
         id:0,
         gender:1
       },
@@ -338,6 +330,8 @@ export default {
 
   },
   onShow() {
+    let text = "<p>🔥&nbsp;深度揭秘链上永续合约交易所——如何找到真正安全、低滑点、高流动性的交易平台？避免踩坑！</p><p><br></p><p>💥&nbsp;Hyperliquid金库狙击事件全解析——巨鲸如何得手？项目方应对是否到位？我们将复盘攻击细节，探讨如何提升资金安全策略。</p><p><br></p><p>🎤&nbsp;大咖圆桌激辩——安全专家、量化团队现场交锋：CEX vs DEX永续合约，谁更胜一筹？</p><p><br></p><p>🤖&nbsp;实盘数据演示——用链上工具实时分析交易所流动性、资金费率，教你用数据选择最佳交易场所！</p><p><br></p><p>💡&nbsp;自由交流+资源对接——结识交易高手、开发者和机构伙伴，拓展你的defi人脉圈！</p><p>无论你是交易员、DeFi玩家还是安全研究员，这场活动都会让你满载而归！</p>";
+    this.richObj = text;
   },
   created() {
   },
@@ -483,7 +477,7 @@ export default {
         console.log("活动时间", self.startTime,self.endTime);
 
         // self.richObj = self.formEditor(data["activity_introduction"]);
-        self.richObj = "<p>所有免费8.8元</p>";
+
 
         // 主理人信息
         self.ownerInfo.name = data.issuer_name;
@@ -505,22 +499,6 @@ export default {
           self.fullLoading = false;
         })
       });
-    },
-    formEditor(editorDetails) {
-      // 活动详情富文本处理
-      // console.log("活动详情富文本处理11",editorDetails)
-      const reg = /style\s*?=\s*?(['"])[\s\S]*?\1/g;
-      return editorDetails?editorDetails.replace(reg, "")
-          .replace(
-              /\<img/gi,
-              '<img style="max-width:100%;height:auto"')
-          .replace(
-              /\<p/gi,
-              '<p style="padding:0 32rpx "')
-          .replace(
-              /\<p style="padding:0 32rpx "><img/gi,
-              '<p style="padding:22rpx 0"><img'
-          ):editorDetails;
     },
     //获取是否报名
     getIsApply(id) {
@@ -1212,12 +1190,12 @@ export default {
       }
     }
     .content-introduce {
-      width: 100%;
+      width: 686rpx;
       height: auto;
       //padding: 0 22rpx;
       padding-top: 36rpx;
       padding-bottom: 20rpx;
-      margin-bottom: 20rpx;
+      margin: 0 auto 20rpx;
       background: #FFFFFF;
       .introduce-title {
         width: 100%;

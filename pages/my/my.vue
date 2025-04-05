@@ -72,7 +72,7 @@
           </view>
           <view class="content-interact-right" @tap="goCommunity">
             <image src="https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/my/community.png"/>
-            <text class="tl-text-overflow-1">{{authResidentialInfo || '社区未认证'}}</text>
+            <text class="tl-text-overflow-1">{{authResidentialInfo || 'balance'}}</text>
           </view>
         </view>
 
@@ -237,17 +237,67 @@
     components: { assetList, tabbarCustom},
 		data() {
 			return {
+        swiperCurrentIndex:0,
         headImg:'https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/common/head.jpg',
         isUpdate: false, //是否弹出更新提示
-				isCheck: false,
-				userInfo: {},
+				isCheck: true,
+				userInfo: {
+          attention: 3,
+          avatar: "https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1724827007178668461448436662.jpg",
+          by_attention: 3,
+          collect_num: 6,
+          community: "平凡的一天",
+          gender: 1,
+          housing: "丽水河畔",
+          id: 13,
+          is_sign: 0,
+          level: 1,
+          mark: 431.6,
+          my_label: "Nothing seek,nothing find",
+          my_task:[],
+          nickname: "小蜗牛",
+          phoneNumber: "13688186917",
+          share_money_weixin_openid: "oQI-f5TROZoo6Eef7Wf-jHnvmulE",
+          user_uuid: "3208364044",
+          wz: 141
+        },
 				faceUrl: "",
 				oldVersion: "", //老版本号
 				myVersion: "", //新版本号
 				cardStatus: "", // 用户实名认证审核状态 status 审核状态：0-待审核，1-已通过，2-未通过
 				sexImg: "", //当前性别的图标
         isSign:'',//是否签到
-        taskList:[],//任务中心
+        taskList:[
+          {
+            StatusList:'',
+            max_weekly: 6,
+            name: "发布活动",
+            number: 0,
+            reward_wz: 60,
+            status: 0,
+            task_id: 1,
+            thumb: "https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/taskCenter/participation_activity.png",
+          }, {
+            StatusList:'',
+            max_weekly: 6,
+            name: "参加活动",
+            number: 0,
+            reward_wz: 30,
+            status: 0,
+            task_id: 2,
+            thumb: "https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/taskCenter/participation_activity.png",
+          },
+          {
+            StatusList:'',
+            max_weekly: 1,
+            name: "注册",
+            number: 0,
+            reward_wz: 30,
+            status: 0,
+            task_id: 3,
+            thumb: "https://goin.obs.cn-north-4.myhuaweicloud.com/acticity/taskCenter/participation_activity.png",
+          }
+        ],//任务中心
         authResidentialInfo:'',//小区
         navBackground:{
           backgroundImage:'linear-gradient( 180deg,#a6c5e9 0%,#b8caee 50%,#d7d2f6 100%)'
@@ -258,7 +308,28 @@
         userSelectLabel:[],//用户选择的标签
         isMessageReminding:false,
         isShowCommunity:false,//是否显示社区
-        myTribeList:[],
+        myTribeList:[
+          {
+            account_audit_status: "1",
+            address: "东郊记忆",
+            administrative_region: "运气十足",
+            brief: "生活的不确定性，正是我们希望的来源",
+            cfx: "cfx:aat6xce8kyjkyn5ed5dx5s4f1z8fsu8kg27b3z52yy",
+            did: "",
+            examine: false,
+            examine_state: 0,
+            fund: 343.9,
+            id: 68,
+            is_hide: false,
+            label: 3,
+            mark: 24,
+            member_num: 7,
+            role: 1,
+            tri_avatar: "https://goin.obs.cn-north-4.myhuaweicloud.com/wechat/1742555171108845604620754732.jpg",
+            tribe_name: "猜你想",
+            wx_audit_status: "certified",
+          }
+        ],
 			};
 		},
 
@@ -966,7 +1037,7 @@
         top: -40rpx;
         width: 100%;
         height: auto;
-        background: linear-gradient( 180deg, #FFFFFF 0%, rgba(255,255,255,0) 40%);
+        background: linear-gradient( 180deg, #FFFFFF 0%, #f6f6f6 40%);
         //background: #F6F6F6;
         border-top-left-radius: 24rpx;
         border-top-right-radius: 24rpx;
